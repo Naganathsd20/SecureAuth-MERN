@@ -36,8 +36,14 @@ async function runE2EVerification() {
   // Connect directly to Mongoose to verify MongoDB data persistence
   const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/secureauth_db';
   console.log(`[TEST 9] Connecting to MongoDB (${mongoUri}) ...`);
-  await mongoose.connect(mongoUri);
-  console.log('✓ MongoDB Connection Established Successfully.\n');
+  try {
+    await mongoose.connect(mongoUri);
+    console.log('✓ MongoDB Connection Established Successfully.\n');
+  } catch (err) {
+    console.warn(`Primary connection failed (${err.message}). Retrying local MongoDB...`);
+    await mongoose.connect('mongodb://127.0.0.1:27017/secureauth_db');
+    console.log('✓ Local MongoDB Connection Established Successfully.\n');
+  }
 
   const testEmail = `e2e_user_${Date.now()}@example.com`;
   const testPassword = 'Password123!';
