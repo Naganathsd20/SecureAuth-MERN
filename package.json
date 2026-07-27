@@ -1,0 +1,16 @@
+{
+  "name": "secureauth-mern-root",
+  "version": "1.0.0",
+  "description": "SecureAuth MERN Authentication System - Root Package",
+  "scripts": {
+    "start": "npm start --prefix server",
+    "server": "npm start --prefix server",
+    "client": "npm start --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "install:all": "npm install --prefix server && npm install --prefix client"
+  },
+  "keywords": ["mern", "authentication", "express", "jwt", "react", "mongodb"],
+  "author": "",
+  "license": "ISC"
+}
