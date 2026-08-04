@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "SecureAuth MERN Authentication System - Root Package",
   "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm run build --prefix client",
+    "vercel-build": "npm run build --prefix client",
     "start": "npm start --prefix server",
     "server": "npm start --prefix server",
     "client": "npm start --prefix client",
@@ -10,7 +13,17 @@
     "dev:client": "npm run dev --prefix client",
     "install:all": "npm install --prefix server && npm install --prefix client"
   },
-  "keywords": ["mern", "authentication", "express", "jwt", "react", "mongodb"],
+  "keywords": [
+    "mern",
+    "authentication",
+    "express",
+    "jwt",
+    "react",
+    "mongodb"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.4"
+  }
 }

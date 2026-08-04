@@ -7,7 +7,13 @@
     "start": "node src/server.js",
     "dev": "node --watch src/server.js"
   },
-  "keywords": ["mern", "authentication", "express", "jwt", "mongodb"],
+  "keywords": [
+    "mern",
+    "authentication",
+    "express",
+    "jwt",
+    "mongodb"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,6 +23,7 @@
     "express": "^4.19.2",
     "express-validator": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.1"
+    "mongoose": "^8.4.1",
+    "secureauth-mern-root": "file:.."
   }
 }
