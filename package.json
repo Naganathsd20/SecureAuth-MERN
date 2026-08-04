@@ -4,8 +4,9 @@
   "description": "SecureAuth MERN Authentication System - Root Package",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "build": "npm run build --prefix client",
-    "vercel-build": "npm run build --prefix client",
+    "build": "npm install --prefix client && npm run build --prefix client",
+    "vercel-build": "npm install --prefix client && npm run build --prefix client",
+    "postinstall": "npm install --prefix client",
     "start": "npm start --prefix server",
     "server": "npm start --prefix server",
     "client": "npm start --prefix client",
